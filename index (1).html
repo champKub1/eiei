@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Museum of Us</title>
+<meta name="description" content="Museum of Us: an anniversary gift made of our memories.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300&family=Inter:wght@300;400&family=Noto+Serif+Thai:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Reusable line-art symbols (original drawings, no external images) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="s-column" viewBox="0 0 100 160"><g fill="none" stroke="currentColor" stroke-width="1.2"><path d="M20 10h60M25 18h50M30 18v118M70 18v118M40 18v118M50 18v118M60 18v118M25 136h50M20 144h60M15 152h70"/></g></symbol>
+  <symbol id="s-bust" viewBox="0 0 100 160"><g fill="none" stroke="currentColor" stroke-width="1.2"><ellipse cx="50" cy="45" rx="20" ry="26"/><path d="M42 68v12c-18 6-30 16-32 40h80c-2-24-14-34-32-40V68M30 120h40M20 130h60v14H20zM30 40q20-18 40 0"/></g></symbol>
+  <symbol id="s-frame" viewBox="0 0 100 160"><g fill="none" stroke="currentColor" stroke-width="1.2"><rect x="10" y="20" width="80" height="120"/><rect x="18" y="28" width="64" height="104"/><circle cx="50" cy="70" r="14"/><path d="M26 124q24-40 48 0M50 84v20"/></g></symbol>
+  <symbol id="s-arch" viewBox="0 0 100 160"><g fill="none" stroke="currentColor" stroke-width="1.2"><path d="M10 150V70a40 40 0 0 1 80 0v80M24 150V72a26 26 0 0 1 52 0v78M10 150h80M50 30v14M10 70h14M76 70h14"/></g></symbol>
+  <symbol id="s-crown" viewBox="0 0 100 160"><g fill="none" stroke="currentColor" stroke-width="1.2"><path d="M18 110l-6-50 24 24 14-34 14 34 24-24-6 50zM18 120h64v14H18zM50 50v-8M12 60v-4M88 60v-4"/><circle cx="50" cy="38" r="3"/></g></symbol>
+  <symbol id="s-vase" viewBox="0 0 100 160"><g fill="none" stroke="currentColor" stroke-width="1.2"><path d="M38 20h24M42 20v22c-22 10-30 40-18 72 6 14 14 20 26 20s20-6 26-20c12-32 4-62-18-72V20M30 80h40M28 100h44M36 60h28"/></g></symbol>
+</svg>
+
+<div class="loader" id="loader" aria-hidden="true">
+  <svg class="loader-mark" viewBox="0 0 100 160"><use href="#s-column"/></svg>
+  <p>Opening the doors</p>
+  <span class="loader-line"></span>
+</div>
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <a href="#home" class="brand" aria-label="Museum of Us, home">
+    <svg viewBox="0 0 100 160" aria-hidden="true"><use href="#s-column"/></svg>
+    <span>Museum of Us</span>
+  </a>
+  <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><i></i><i></i></button>
+  <nav id="menu" class="menu" aria-label="Main">
+    <a href="#home">Home</a>
+    <a href="#about">Our story</a>
+    <a href="#collections">Memories</a>
+    <a href="#exhibitions">Anniversary</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#visit">Letter</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-bg" data-parallax="0.25">
+    <!-- Palace hall drawn in SVG -->
+    <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of a grand palace hall with marble columns, tall windows and a chandelier">
+      <defs>
+        <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a1a12"/><stop offset="1" stop-color="#0a0908"/></linearGradient>
+        <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E8D7A5" stop-opacity=".55"/><stop offset="1" stop-color="#E8D7A5" stop-opacity="0"/></linearGradient>
+        <radialGradient id="glow" cx=".5" cy=".3" r=".6"><stop offset="0" stop-color="#C8A96B" stop-opacity=".45"/><stop offset="1" stop-color="#C8A96B" stop-opacity="0"/></radialGradient>
+      </defs>
+      <rect width="1600" height="900" fill="#150d0b"/>
+      <rect width="1600" height="900" fill="url(#glow)"/>
+      <g fill="#4A101B" opacity=".55"><path d="M0 0h1600v120q-800 90-1600 0z"/></g>
+      <g stroke="#C8A96B" stroke-opacity=".5" fill="none"><path d="M0 120q800 90 1600 0M0 140q800 90 1600 0M300 0v110M800 0v95M1300 0v110"/></g>
+      <g fill="#E8D7A5" opacity=".9"><path d="M470 140h-4v150h4zM1130 140h-4v150h4z"/></g>
+      <g fill="#0a0908" stroke="#C8A96B" stroke-opacity=".6">
+        <path d="M330 640V300a60 60 0 0 1 120 0v340z"/><path d="M740 640V260a60 60 0 0 1 120 0v380z"/><path d="M1150 640V300a60 60 0 0 1 120 0v340z"/>
+      </g>
+      <g fill="url(#beam)"><path d="M350 300h80l260 600H150z"/><path d="M760 260h80l180 640H600z"/><path d="M1170 300h80l320 600H1000z"/></g>
+      <g fill="#241812" stroke="#C8A96B" stroke-opacity=".35">
+        <rect x="90" y="150" width="70" height="520"/><rect x="1440" y="150" width="70" height="520"/><rect x="560" y="200" width="46" height="470"/><rect x="994" y="200" width="46" height="470"/>
+      </g>
+      <g fill="#C8A96B" opacity=".8"><rect x="80" y="140" width="90" height="14"/><rect x="1430" y="140" width="90" height="14"/><rect x="80" y="664" width="90" height="14"/><rect x="1430" y="664" width="90" height="14"/></g>
+      <g class="chandelier" stroke="#E8D7A5" fill="none" transform="translate(800 150)">
+        <path d="M0 0v70M-70 100q70 40 140 0M-45 80q45 25 90 0M-70 100v14M70 100v14M-35 90v12M35 90v12M0 85v16"/>
+        <g fill="#E8D7A5"><circle cx="-70" cy="118" r="5"/><circle cx="70" cy="118" r="5"/><circle cx="-35" cy="106" r="4"/><circle cx="35" cy="106" r="4"/><circle cx="0" cy="104" r="4"/></g>
+      </g>
+      <rect y="640" width="1600" height="260" fill="url(#floor)"/>
+      <g stroke="#C8A96B" stroke-opacity=".18"><path d="M800 640L-200 900M800 640L200 900M800 640L500 900M800 640L800 900M800 640L1100 900M800 640L1400 900M800 640L1800 900M0 700h1600M0 780h1600"/></g>
+    </svg>
+  </div>
+  <div class="hero-shade"></div>
+  <div class="dust" id="dust" aria-hidden="true"></div>
+  <div class="hero-content">
+    <p class="hero-kicker reveal-line"><span>Happy Anniversary</span></p>
+    <h1 class="hero-title"><span class="reveal-line"><span>The Museum</span></span><span class="reveal-line"><span>of Us</span></span></h1>
+    <p class="hero-sub reveal-line"><span>Where our love becomes eternal</span></p>
+    <div class="hero-actions">
+      <a class="btn btn-gold" href="#about">Enter our story</a>
+      <a class="btn btn-ghost" href="#collections">See our memories</a>
+    </div>
+  </div>
+  <a href="#about" class="scroll-hint" aria-label="Scroll down"><i></i></a>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <figure class="about-art reveal" data-parallax="-0.06">
+      <svg viewBox="0 0 100 160" role="img" aria-label="Line drawing of a classical column"><use href="#s-column"/></svg>
+    </figure>
+    <div class="about-text">
+      <h2 class="split">A love beyond time</h2>
+      <span class="rule"></span>
+      <p class="reveal">ทุกความทรงจำของเราถูกเก็บไว้ที่นี่ เหมือนผลงานที่ล้ำค่าที่สุด ตั้งแต่วันแรกที่เจอกัน เสียงหัวเราะเล็ก ๆ จนถึงวันที่เรายังเลือกกันและกันอยู่ทุกวัน</p>
+      <p class="reveal">พิพิธภัณฑ์แห่งนี้สร้างขึ้นเพื่อบอกว่า ฉันดีใจแค่ไหนที่ได้เดินผ่านเวลาทั้งหมดนี้ไปกับเธอ</p>
+      <p class="note reveal">ข้อความทั้งหมดเป็นตัวอย่าง แก้เป็นเรื่องราวของคุณเองได้ในไฟล์ index.html</p>
+    </div>
+  </div>
+</section>
+
+<section class="collections" id="collections">
+  <div class="wrap">
+    <h2 class="split">Our memories</h2>
+    <span class="rule"></span>
+    <ul class="coll-grid">
+      <li class="coll c1 reveal"><button class="art-btn" data-open data-title="The First Hello" data-era="Chapter I" data-text="วันที่เราเจอกันครั้งแรก และหัวใจเริ่มเต้นแรงกว่าปกติ"><div class="art"><svg><use href="#s-vase"/></svg></div><div class="cap"><h3>The First Hello</h3><em>Chapter I</em><p>วันที่เราเจอกันครั้งแรก และหัวใจเริ่มเต้นแรงกว่าปกติ</p></div></button></li>
+      <li class="coll c2 reveal"><button class="art-btn" data-open data-title="Our First Date" data-era="Chapter II" data-text="มื้อแรกที่เรานั่งกินด้วยกัน และบทสนทนาที่ไม่อยากให้จบ"><div class="art"><svg><use href="#s-frame"/></svg></div><div class="cap"><h3>Our First Date</h3><em>Chapter II</em><p>มื้อแรกที่เรานั่งกินด้วยกัน และบทสนทนาที่ไม่อยากให้จบ</p></div></button></li>
+      <li class="coll c3 reveal"><button class="art-btn" data-open data-title="Little Treasures" data-era="Chapter III" data-text="ของขวัญชิ้นเล็ก ๆ จดหมายสั้น ๆ และทุกอย่างที่เราเก็บไว้"><div class="art"><svg><use href="#s-crown"/></svg></div><div class="cap"><h3>Little Treasures</h3><em>Chapter III</em><p>ของขวัญชิ้นเล็ก ๆ จดหมายสั้น ๆ และทุกอย่างที่เราเก็บไว้</p></div></button></li>
+      <li class="coll c4 reveal"><button class="art-btn" data-open data-title="Hard Days" data-era="Chapter IV" data-text="วันที่ยากลำบาก แต่เรายังจับมือกันไว้แน่น"><div class="art"><svg><use href="#s-bust"/></svg></div><div class="cap"><h3>Hard Days</h3><em>Chapter IV</em><p>วันที่ยากลำบาก แต่เรายังจับมือกันไว้แน่น</p></div></button></li>
+      <li class="coll c5 reveal"><button class="art-btn" data-open data-title="Our Little Home" data-era="Chapter V" data-text="โลกใบเล็กที่เราสร้างขึ้นด้วยกัน ทีละวัน ทีละเรื่อง"><div class="art"><svg><use href="#s-arch"/></svg></div><div class="cap"><h3>Our Little Home</h3><em>Chapter V</em><p>โลกใบเล็กที่เราสร้างขึ้นด้วยกัน ทีละวัน ทีละเรื่อง</p></div></button></li>
+      <li class="coll c6 reveal"><button class="art-btn" data-open data-title="Every Ordinary Day" data-era="Chapter VI" data-text="วันธรรมดาที่กลายเป็นวันพิเศษเพราะมีเธออยู่ด้วย"><div class="art"><svg><use href="#s-column"/></svg></div><div class="cap"><h3>Every Ordinary Day</h3><em>Chapter VI</em><p>วันธรรมดาที่กลายเป็นวันพิเศษเพราะมีเธออยู่ด้วย</p></div></button></li>
+    </ul>
+  </div>
+</section>
+
+<section class="exhibit" id="exhibitions">
+  <div class="exhibit-bg" data-parallax="0.18" aria-hidden="true">
+    <svg viewBox="0 0 1600 700" preserveAspectRatio="xMidYMid slice"><g fill="none" stroke="#C8A96B" stroke-opacity=".35"><path d="M0 700V300a200 200 0 0 1 400 0v400M400 700V240a200 200 0 0 1 400 0v460M800 700V300a200 200 0 0 1 400 0v400M1200 700V240a200 200 0 0 1 400 0v460"/><path d="M0 560h1600M0 600h1600"/></g></svg>
+  </div>
+  <div class="wrap exhibit-inner">
+    <p class="exhibit-date reveal">Happy Anniversary</p>
+    <h2 class="split">The love of the century</h2>
+    <p class="reveal">ครบรอบอีกปี แต่ความรู้สึกยังเหมือนวันแรก เลื่อนลงไปดูภาพของเราทั้งหมด แล้วอ่านจดหมายที่ฉันเขียนไว้ให้ที่ด้านล่างสุด</p>
+    <button class="btn btn-gold reveal" id="exhibitBtn">See our photos</button>
+  </div>
+</section>
+
+<section class="gallery" id="gallery">
+  <div class="wrap">
+    <h2 class="split">Our gallery</h2>
+    <span class="rule"></span>
+    <div class="g-grid">
+      <button class="g g1" data-open data-title="The Day We Met" data-era="Gallery I" data-text="ภาพแรกที่เราอยู่ด้วยกัน"><svg><use href="#s-column"/></svg></button>
+      <button class="g g2" data-open data-title="Your Smile" data-era="Gallery II" data-text="รอยยิ้มที่ฉันชอบที่สุด"><svg><use href="#s-frame"/></svg></button>
+      <button class="g g3" data-open data-title="Sunday Mornings" data-era="Gallery III" data-text="เช้าวันอาทิตย์ที่ไม่ต้องรีบไปไหน"><svg><use href="#s-bust"/></svg></button>
+      <button class="g g4" data-open data-title="Where We Traveled" data-era="Gallery IV" data-text="ทุกที่ที่เราไปด้วยกัน"><svg><use href="#s-arch"/></svg></button>
+      <button class="g g5" data-open data-title="Our Celebrations" data-era="Gallery V" data-text="วันพิเศษที่เราฉลองด้วยกัน"><svg><use href="#s-crown"/></svg></button>
+      <button class="g g6" data-open data-title="Quiet Moments" data-era="Gallery VI" data-text="ช่วงเวลาเงียบ ๆ ที่มีแค่เรา"><svg><use href="#s-vase"/></svg></button>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap visit-grid">
+    <div>
+      <h2 class="split">A letter for you</h2>
+      <span class="rule"></span>
+      <p class="reveal">ประตูนี้เปิดให้เธอคนเดียว อ่านจนจบแล้วอย่าลืมกอดฉันนะ</p>
+    </div>
+    <dl class="reveal">
+      <dt>Since</dt><dd>วันที่เราเริ่มต้นด้วยกัน (ใส่วันที่ของคุณ)</dd>
+      <dt>Today</dt><dd>ครบรอบอีกหนึ่งปีแล้ว</dd>
+      <dt>Promise</dt><dd>จะอยู่ข้าง ๆ เธอเสมอ</dd>
+    </dl>
+  </div>
+  <footer>Made with love, for you.</footer>
+</section>
+</main>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Artwork viewer" hidden>
+  <button class="lb-close" id="lbClose" aria-label="Close">&times;</button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous">&#8249;</button>
+  <figure class="lb-fig">
+    <div class="lb-art" id="lbArt"></div>
+    <figcaption><h3 id="lbTitle"></h3><em id="lbEra"></em><p id="lbText"></p></figcaption>
+  </figure>
+  <button class="lb-nav lb-next" id="lbNext" aria-label="Next">&#8250;</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
